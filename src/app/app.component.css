@@ -1,0 +1,17 @@
+.centerdiv{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.container1{
+  width: 80%;
+}
+
+.container2{
+  width: 50%;
+}
+
+.btn,.btn-outline-success,.btn-outline-warning{
+  border-radius: 50px;
+}

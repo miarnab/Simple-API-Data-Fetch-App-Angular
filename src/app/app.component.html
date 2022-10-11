@@ -1,0 +1,77 @@
+<div class="centerdiv container1">
+  <br>
+  <br>
+  <div class="container2 centerdiv">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="latitude">Latitude:
+          <input type="number" class="latitude" name="latitude" id="latitude" required>
+        </label>
+      </div>
+      <div class="col-md-6">
+        <label for="longitude">Longitude:
+          <input type="number" class="latitude" name="latitude" id="latitude" required>
+        </label>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="dimension">Dimension:
+          <input type="number" class="dimension" name="dimension" id="dimension" required>
+        </label>
+      </div>
+      <div class="col-md-6">
+        <label for="date">Date:
+          <input type="date" class="date" name="date" id="date" required>
+        </label>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Cloud Score:</p>
+        <label for="true">
+          <input type="radio" class="true" name="true" id="true" value="true" required>True
+        </label>
+        <label for="false">
+          <input type="radio" class="false" name="false" id="false" value="false" required>False
+        </label>
+      </div>
+      <div class="col-md-6">
+        <label for="api_key">API Key:
+          <input type="text" class="api_key" name="api_key" id="api_key" required>
+        </label>
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-outline-success" (click)="submitData()">Submit</button>
+    <button type="reset" class="btn btn-outline-warning">Reset</button>
+  </div>
+  <br>
+  <br>
+  <div *ngIf="results">
+    <table class="table table-striped table-hover table-bordered border-success">
+      <thead>
+        <tr>
+          <td>Latitude</td>
+          <td>Longitude</td>
+          <td>Dimension</td>
+          <td>Date</td>
+          <td>Cloud Score</td>
+          <td>API Key</td>
+        </tr>
+      </thead>
+      <tbody *ngFor="let result of results | async">
+        <tr>
+          <td>{{ result.lat }}</td>
+          <td>{{ result.lon }}</td>
+          <td>{{ result.dim }}</td>
+          <td>{{ result.date }}</td>
+          <td>{{ result.cloud_score }}</td>
+          <td>{{ result.api_key }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
